@@ -1,10 +1,20 @@
 import mongoose from 'mongoose';
 
-const userSchema = Schema(
+const userSchema = new mongoose.Schema(
     {
         firstName: String,
         lastName: String,
+        email : {
+            type : String,
+            required : true,
+            unique : true,
+        },
         username: {
+            type: String,
+            unique: true,
+            required: true,
+        },
+        password : {
             type: String,
             required: true,
         },
@@ -24,3 +34,7 @@ const userSchema = Schema(
         numFollowers : Number
     }
 );
+
+const User = mongoose.model('User', userSchema);
+
+export default User;

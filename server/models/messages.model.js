@@ -1,6 +1,6 @@
 import mongoose from 'mongoose';
 
-const messageSchema = Schema(
+const messageSchema = mongoose.Schema(
     {
         group:[
             {
